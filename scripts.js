@@ -1,1 +1,2 @@
-"test | alert(1);" 
+  test | alert(1);
+  urlfinder | alert(window.location);
