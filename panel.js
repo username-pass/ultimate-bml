@@ -1,5 +1,7 @@
-
-
+//adds jquery
+var script = document.createElement('script');
+script.src = 'https://code.jquery.com/jquery-3.6.0.min.js';
+document.getElementsByTagName('head')[0].appendChild(script);
 
 function readTextFile(file, callback) {
   var rawFile = new XMLHttpRequest();
@@ -13,7 +15,11 @@ function readTextFile(file, callback) {
   rawFile.send(null);
 }
 
-readTextFile()
+function jqueryGet(url,callback){
+$.get(url, function(responseText) {
+    callback(responseText);
+});
+}
 
 function makePanel() {
 
@@ -59,7 +65,9 @@ function makePanel() {
   scriptsButton.style.color = "#ccc";
   scriptsButton.onclick = function() {
 
-    readTextFile("https://github.com/username-pass/ultimate-bml/raw/main/scripts.js",scriptsbutton());
+    jqueryGet("https://raw.githubusercontent.com/username-pass/ultimate-bml/main/scripts.js",function(txt){
+    scriptsbutton(txt.split("	"));
+    });
   };
   buttonPanel.appendChild(scriptsButton);
 
@@ -90,7 +98,7 @@ function makePanel() {
     scrpt.style.backgroundColor = "#333";
     scrpt.style.color = "#ccc";
     scrpt.onclick = function() {
-      eval(script[1]);
+      alert(script[1]);
     };
     eval(appender + ".appendChild(scrpt);");
   }
@@ -120,9 +128,9 @@ function makePanel() {
 
     for (i = 0; i < scripts.length; i++) {
       makeScriptButton(scripts[i], "panel");
-      if (i % 1 == 0) {
+      //if (i % 1 == 0) {
         panel.innerHTML = panel.innerHTML + "<br>";
-      }
+      //}
     }
     //HTML("scripts go here!");
   }
