@@ -28,7 +28,7 @@ function makePanel() {
 
   //making the html changer
   function HTML(input) {
-    panel.innerHTML = input;
+    panel.innerText = input;
   }
 
   //making a panel to append all the other buttons
@@ -101,7 +101,7 @@ document.body.appendChild(styles);
   panel.style.backgroundColor = '#333';
   panel.style.color = '#ccc';
   buttonPanel.appendChild(panel);
-  HTML('hello and welcome.... <br><br> To the PANEL!!!');
+  HTML('hello and welcome.... \n \n To the PANEL!!!');
 
 // .thecode
 //thestyle.innerText += ".avothecode {border: 1px solid white; margin: 5px; margin-top: 10px; border-radius: 10px; padding: 5px; overflow: scroll; text-align: left; height: 90%;}"
@@ -143,12 +143,12 @@ document.body.appendChild(styles);
   }
 
   function scriptsbutton(scripts) {
-    HTML('scripts: <br>');
+    HTML('scripts: \n');
 
     for (i = 0; i < scripts.length; i++) {
       makeScriptButton(scripts[i], 'panel');
       //if (i % 1 == 0) {
-      panel.innerHTML = panel.innerHTML + '<br>';
+      panel.innerHTML = panel.innerHTML + '\n';
       //}
     }
     //HTML("scripts go here!");
@@ -164,7 +164,7 @@ document.body.appendChild(styles);
       var url = await fetch(window.location);
       var res = await url.text();
       code = res;
-      HTML('code goes here: <br>' + code);
+      HTML('code goes here: \n' + code);
     }
     fetchcode();
 
