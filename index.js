@@ -99,7 +99,7 @@ function makePanel() {
     scrpt.onclick = function () {
       alert(script[1]);
     };
-    eval(appender + '.appendChild(scrpt);');
+    alert(appender + '.appendChild(scrpt);');
   }
   //button code
 
