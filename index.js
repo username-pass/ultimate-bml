@@ -37,6 +37,8 @@ function makePanel() {
   buttonPanel.id = 'bpanel';
   buttonPanel.style.float = 'right';
   buttonPanel.style.float = 'top';
+  buttonPanel.style.marginRight = '0px';
+  buttonPanel.style.marginTop = '0px';
   buttonPanel.style.position = 'relative';
   document.getElementsByTagName("body")[0].appendChild(buttonPanel);
 
