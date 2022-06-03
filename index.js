@@ -61,7 +61,7 @@ function makePanel() {
   scriptsButton.style.color = '#ccc';
   scriptsButton.onclick = function () {
     jqueryGet(
-      'https://github.com/username-pass/ultimate-bml/raw/main/scripts.js',
+      'https://raw.githubusercontent.com/username-pass/ultimate-bml/main/scripts.js',
       function (txt) {
         scriptsbutton(txt.split('\n  '));
       }
