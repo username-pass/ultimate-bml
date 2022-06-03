@@ -139,7 +139,7 @@ function makePanel() {
       var url = await fetch(window.location);
       var res = await url.text();
       code = res;
-      HTML('code goes here <br>'+code);
+      HTML('code goes here: <br>'+code);
     }
     fetchcode();
     
