@@ -22,57 +22,6 @@ function jqueryGet(url, callback) {
 }
 
 function buttons() {
-  //button code
-
-  function button() {
-    HTML('generic, why are you here');
-  }
-
-  function editdocbutton() {
-    if (document.body.contentEditable !== 'true') {
-      document.body.contentEditable = 'true';
-      document.designMode = 'on';
-      void 0;
-    } else {
-      document.body.contentEditable = 'false';
-      document.designMode = 'off';
-      void 0;
-    }
-    HTML('edit edit edit...');
-  }
-
-  function scriptsbutton(scripts) {
-    HTML('scripts: \n');
-
-    for (i = 0; i < scripts.length; i++) {
-      makeScriptButton(scripts[i], 'panel');
-      //if (i % 1 == 0) {
-      panel.innerHTML = panel.innerHTML + '\n';
-      //}
-    }
-    //HTML("scripts go here!");
-  }
-
-  function codebutton() {
-    async function fetchcode() {
-      // Fetch Code
-      var code;
-      var url = await fetch(window.location);
-      var res = await url.text();
-      code = res;
-      HTML('code goes here: \n' + code);
-    }
-    fetchcode();
-  }
-
-  function xraybutton() {
-    var script = document.createElement('script');
-    script.src = 'https://x-ray-goggles.mouse.org/webxray.js';
-    script.className = 'webxray';
-    script.setAttribute('data-lang', 'en-US');
-    script.setAttribute('data-baseuri', 'https://x-ray-goggles.mouse.org');
-    document.body.appendChild(script);
-  }
 }
 
 function makePanel() {
@@ -188,6 +137,60 @@ function makePanel() {
     //alert(script[1]);
     eval(appender + '.appendChild(scrpt);');
   }
+  
+  
+  //button code
+
+  function button() {
+    HTML('generic, why are you here');
+  }
+
+  function editdocbutton() {
+    if (document.body.contentEditable !== 'true') {
+      document.body.contentEditable = 'true';
+      document.designMode = 'on';
+      void 0;
+    } else {
+      document.body.contentEditable = 'false';
+      document.designMode = 'off';
+      void 0;
+    }
+    HTML('edit edit edit...');
+  }
+
+  function scriptsbutton(scripts) {
+    HTML('scripts: \n');
+
+    for (i = 0; i < scripts.length; i++) {
+      makeScriptButton(scripts[i], 'panel');
+      //if (i % 1 == 0) {
+      panel.innerHTML = panel.innerHTML + '\n';
+      //}
+    }
+    //HTML("scripts go here!");
+  }
+
+  function codebutton() {
+    async function fetchcode() {
+      // Fetch Code
+      var code;
+      var url = await fetch(window.location);
+      var res = await url.text();
+      code = res;
+      HTML('code goes here: \n' + code);
+    }
+    fetchcode();
+  }
+
+  function xraybutton() {
+    var script = document.createElement('script');
+    script.src = 'https://x-ray-goggles.mouse.org/webxray.js';
+    script.className = 'webxray';
+    script.setAttribute('data-lang', 'en-US');
+    script.setAttribute('data-baseuri', 'https://x-ray-goggles.mouse.org');
+    document.body.appendChild(script);
+  }
+  
 }
 
 makePanel();
