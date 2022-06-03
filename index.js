@@ -133,7 +133,16 @@ function makePanel() {
   }
 
   function codebutton() {
-    HTML('code goes here');
+    async function fetchcode() {
+      // Fetch Code
+      var code;
+      var url = await fetch(window.location);
+      var res = await url.text();
+      code = res;
+      HTML('code goes here <br>'+code);
+    }
+    fetchcode();
+    
   }
 }
 makePanel();
