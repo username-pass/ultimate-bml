@@ -64,6 +64,7 @@ function makePanel() {
       'https://raw.githubusercontent.com/username-pass/ultimate-bml/main/scripts.js',
       function (txt) {
         scriptsbutton(txt.split('..'));
+        alert(txt.split('..'));
       }
     );
   };
