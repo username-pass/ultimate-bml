@@ -36,7 +36,8 @@ function makePanel() {
   var buttonPanel = document.createElement('div');
   buttonPanel.id = 'bpanel';
   buttonPanel.style.float = 'right';
-  document.body.appendChild(buttonPanel);
+  document.getElementsByTagName("body")[0].appendChild(buttonPanel);
+
 
   //generic button
   var Button = document.createElement('button');
