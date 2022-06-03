@@ -35,12 +35,12 @@ function makePanel() {
 
   var buttonPanel = document.createElement('div');
   buttonPanel.id = 'bpanel';
-  //buttonPanel.style.float = 'right';
-  //buttonPanel.style.float = 'top';
+  buttonPanel.style.float = 'right';
+  buttonPanel.style.float = 'top';
   //buttonPanel.style.marginRight = '0px';
   //buttonPanel.style.marginTop = '0px';
-  buttonPanel.style.top = '0px';
-  buttonPanel.style.right = '0px';
+  //buttonPanel.style.top = '0px';
+  //buttonPanel.style.top = '0px';
   buttonPanel.style.position = 'relative';
   document.getElementsByTagName("body")[0].appendChild(buttonPanel);
 
@@ -91,22 +91,37 @@ function makePanel() {
   };
   buttonPanel.appendChild(codeButton);
 
-//style stuff
-var styles = document.createElement("style");
-styles.innerText +=".scroll {margin:4px, 4px;padding:4px;background-color: green;width: 500px;height: 110px;overflow-x: hidden;overflow-y: auto;text-align:justify;}"
-document.body.appendChild(styles);
+  //xray button
+  var xrayButton = document.createElement('button');
+  xrayButton.innerHTML = 'Xray';
+  xrayButton.style.backgroundColor = '#333';
+  xrayButton.style.color = '#ccc';
+  xrayButton.onclick = function() {
+    xraybutton();
+  };
+  buttonPanel.appendChild(xrayButton);
+  
+    //exit button
+  var exitButton = document.createElement('button');
+  exitButton.innerHTML = 'X';
+  exitButton.style.backgroundColor = '#333';
+  exitButton.style.color = '#ccc';
+  exitButton.onclick = function() {
+    buttonPanel.remove();
+  };
+  buttonPanel.appendChild(exitButton);
 
   //make info panel inside
   var panel = document.createElement('div');
   panel.class = "scroll";
-	panel.style.cssText += 'margin:4px, 4px;padding:4px;width: 256px;height: 256px;overflow-x: hidden;overflow-y: auto;text-align:justify';
+  panel.style.cssText += 'margin:4px, 4px;padding:4px;width: 256px;height: 256px;overflow-x: hidden;overflow-y: auto;text-align:justify';
   panel.style.backgroundColor = '#333';
   panel.style.color = '#ccc';
   buttonPanel.appendChild(panel);
   HTML('hello and welcome.... \n \n To the PANEL!!!');
 
-// .thecode
-//thestyle.innerText += ".avothecode {border: 1px solid white; margin: 5px; margin-top: 10px; border-radius: 10px; padding: 5px; overflow: scroll; text-align: left; height: 90%;}"
+  // .thecode
+  //thestyle.innerText += ".avothecode {border: 1px solid white; margin: 5px; margin-top: 10px; border-radius: 10px; padding: 5px; overflow: scroll; text-align: left; height: 90%;}"
 
 
 
@@ -157,9 +172,6 @@ document.body.appendChild(styles);
   }
 
   function codebutton() {
-    
-
-
     async function fetchcode() {
       // Fetch Code
       var code;
@@ -170,6 +182,15 @@ document.body.appendChild(styles);
     }
     fetchcode();
 
+  }
+
+  function xraybutton() {
+    var script = document.createElement('script');
+    script.src = 'https://x-ray-goggles.mouse.org/webxray.js';
+    script.className = 'webxray';
+    script.setAttribute('data-lang', 'en-US');
+    script.setAttribute('data-baseuri', 'https://x-ray-goggles.mouse.org');
+    document.body.appendChild(script);
   }
 }
 makePanel();
