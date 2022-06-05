@@ -83,7 +83,7 @@ function makePanel() {
   //generic button
   var Button = document.createElement('button');
   Button.innerHTML = 'Button!';
-  Button.style.backgroundColor = '#333';
+  Button.style.backgroundColor = 'rgb(0,20,40)';
   Button.style.color = '#ccc';
   
 	Button.onclick = function () {
@@ -94,7 +94,7 @@ function makePanel() {
   //make edit doc button
   var editDocButton = document.createElement('button');
   editDocButton.innerHTML = '📝';
-  editDocButton.style.backgroundColor = '#333';
+  editDocButton.style.backgroundColor = 'rgb(0,20,40)';
   editDocButton.style.color = '#ccc';
   
 	editDocButton.onclick = function () {
@@ -106,7 +106,7 @@ function makePanel() {
   var scriptsButton = document.createElement('button');
   scriptsButton.innerHTML = 'Scripts';
 	
-  scriptsButton.style.backgroundColor = '#333';
+  scriptsButton.style.backgroundColor = 'rgb(0,20,40)';
   scriptsButton.style.color = '#ccc';
   
 	scriptsButton.onclick = function () {
@@ -125,7 +125,7 @@ function makePanel() {
   //making document code button
   var codeButton = document.createElement('button');
   codeButton.innerHTML = 'docCode';
-  codeButton.style.backgroundColor = '#333';
+  codeButton.style.backgroundColor = 'rgb(0,20,40)';
   codeButton.style.color = '#ccc';
   
 	codeButton.onclick = function () {
@@ -136,7 +136,7 @@ function makePanel() {
   //xray button
   var xrayButton = document.createElement('button');
   xrayButton.innerHTML = 'Xray';
-  xrayButton.style.backgroundColor = '#333';
+  xrayButton.style.backgroundColor = 'rgb(0,20,40)';
   xrayButton.style.color = '#ccc';
   xrayButton.onclick = function () {
 		
@@ -146,7 +146,7 @@ function makePanel() {
 	  //generic button
   var consoleButton = document.createElement('button');
   consoleButton.innerHTML = 'Console';
-  consoleButton.style.backgroundColor = '#333';
+  consoleButton.style.backgroundColor = 'rgb(0,20,40)';
   consoleButton.style.color = '#ccc';
   
 	consoleButton.onclick = function () {
@@ -157,7 +157,7 @@ function makePanel() {
   //exit button
   var exitButton = document.createElement('button');
   exitButton.innerHTML = 'X';
-  exitButton.style.backgroundColor = '#333';
+  exitButton.style.backgroundColor = 'rgb(0,20,40)';
   exitButton.style.color = '#ccc';
   exitButton.onclick = function () {
 		
@@ -170,7 +170,7 @@ function makePanel() {
   panel.class = 'scroll';
   panel.style.cssText +=
     'margin:4px, 4px;padding:4px;width: 256px;height: 256px;overflow-x: hidden;overflow-y: auto;text-align:justify';
-  panel.style.backgroundColor = '#333';
+  panel.style.backgroundColor = 'rgb(0,20,40)';
   panel.style.color = '#ccc';
   buttonPanel.appendChild(panel);
 	
@@ -186,7 +186,7 @@ function makePanel() {
     let scripts = scripty.split(' | ');
     scrpt[num] = document.createElement('button');
 		scrpt[num].class = 'scriptButton';
-    scrpt[num].style.backgroundColor = '#333';
+    scrpt[num].style.backgroundColor = 'rgb(0,20,40)';
     scrpt[num].style.color = '#ccc';		
     scrpt[num].onclick = console.log(scripts[1]);
 		scrpt[num].innerHTML = scrpt[num].onclick+": "+scripts[0];
