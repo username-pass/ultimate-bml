@@ -2,7 +2,7 @@
 var script = document.createElement('script');
 script.src = 'https://code.jquery.com/jquery-3.6.0.min.js';
 document.getElementsByTagName('head')[0].appendChild(script);
-
+//prompt("",window.location);
 function readTextFile(file, callback) {
   var rawFile = new XMLHttpRequest();
   rawFile.overrideMimeType('application/json');
@@ -78,7 +78,7 @@ function makePanel() {
   buttonPanel.style.right = '0px';
   buttonPanel.style.top = '0px';
   buttonPanel.style.position = 'relative';
-  document.getElementsByTagName('body')[0].appendChild(buttonPanel);
+  document.getElementsByTagName('body')[0].prepend(buttonPanel);
 
   //generic button
   var Button = document.createElement('button');
@@ -172,7 +172,8 @@ function makePanel() {
     'margin:4px, 4px;padding:4px;width: 256px;height: 256px;overflow-x: hidden;overflow-y: auto;text-align:justify';
   panel.style.backgroundColor = 'rgb(0,20,40)';
   panel.style.color = '#ccc';
-  buttonPanel.appendChild(panel);
+  //document.getElementsByTagName("buttonPanel")[0].appendChild(panel);
+	buttonPanel.appendChild(panel);
 	
 	
   HTML('hello and welcome.... \n \n To the PANEL!!!');
