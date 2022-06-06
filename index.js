@@ -167,12 +167,13 @@ function makePanel() {
 
   //make info panel inside
   var panel = document.createElement('div');
-  panel.class = 'scroll';
+  panel.class = 'display';
   panel.style.cssText +=
     'margin:4px, 4px;padding:4px;width: 256px;height: 256px;overflow-x: hidden;overflow-y: auto;text-align:justify';
   panel.style.backgroundColor = 'rgb(0,20,40)';
   panel.style.color = '#ccc';
   buttonPanel.appendChild(panel);
+	
 	
   HTML('hello and welcome.... \n \n To the PANEL!!!');
 
@@ -245,15 +246,16 @@ function makePanel() {
 	function consolebutton() {
 
 			console.log("console");
-			let cons = "";
+			let cons = "<style>hr {width: 100%;height: 0.3px;margin-top: 0.5em;margin-top: 0.5em;background-color: #b7d0e2;border: 0 none;}</style>";
 			for(i=0;i<console.everything.length-1;i++){
 				let coev = console.everything[i];
 				let val = String(coev.value);
 				val = val.trim();
-				cons = cons+""+coev.type+": "+val+"\n";
+				cons = cons+"<p>"+coev.type+": "+val+"<p>\n";
+				cons = cons+"<hr>";
 			}
 		
-      HTML('console: \n' + cons);
+      panel.innerHTML = 'console: \n' + cons;
     
     
   }
