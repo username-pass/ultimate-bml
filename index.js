@@ -77,8 +77,10 @@ function makePanel() {
   buttonPanel.style.right = '0px';
   buttonPanel.style.top = '0px';
   buttonPanel.style.position = 'relative';
-  document.getElementsByTagName('body')[0].prependChild(buttonPanel);
-
+	buttonPanel.setAttribute("z-index","10000");
+  document.body.append(buttonPanel);
+	
+	
   //generic button
   var Button = document.createElement('button');
   Button.innerHTML = 'Button!';
